@@ -4,11 +4,14 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.JButton;
+import javax.swing.JTextField;
 
 
 public class test extends JFrame {
 
 	private JPanel contentPane;
+	private JTextField textField;
 
 	/**
 	 * Launch the application.
@@ -34,8 +37,16 @@ public class test extends JFrame {
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JButton btnPrzycisk = new JButton("Przycisk");
+		btnPrzycisk.setBounds(34, 85, 117, 25);
+		contentPane.add(btnPrzycisk);
+		
+		textField = new JTextField();
+		textField.setBounds(34, 54, 183, 19);
+		contentPane.add(textField);
+		textField.setColumns(10);
 	}
-
 }
