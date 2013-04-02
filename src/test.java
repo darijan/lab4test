@@ -6,12 +6,15 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
 import javax.swing.JTextField;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 
 public class test extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textField;
+	private JButton btnPrzycisk;
 
 	/**
 	 * Launch the application.
@@ -40,7 +43,12 @@ public class test extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JButton btnPrzycisk = new JButton("Przycisk");
+		btnPrzycisk = new JButton("Przycisk");
+		btnPrzycisk.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				btnPrzycisk.setText(textField.getText());
+			}
+		});
 		btnPrzycisk.setBounds(34, 85, 117, 25);
 		contentPane.add(btnPrzycisk);
 		
